@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+re enter password: <input type="text" id="fname" value="sri ">
+<button onclick="checkName()">Check Name</button>
+<p id="demo"></p>
+
+<script>
+function checkName() {
+  var repass = document.getElementById("fname").value;
+  var result = (repass === "sri") ? "Hello!":"check your password!";
+  document.getElementById("demo").innerHTML = result;
+}
+</script>
+
+</body>
+</html>

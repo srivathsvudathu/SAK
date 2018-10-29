@@ -1,0 +1,44 @@
+﻿<?php
+if(isset($_POST['sub']))
+{
+$con = mysqli_connect("localhost","root","","sak");
+mysqli_query($con,"select * from register");
+$sql="INSERT INTO register (Username,Age,DOB,Phonenumber,email,password)
+VALUES('$_POST[Username]','$_POST[Age]','$_POST[DOB]','$_POST[Phonenumber]','$_POST[email]','$_POST[password]')";
+if (!mysqli_query($con,$sql))
+  {
+  die('Error: ' . mysqli_error($con));
+  }
+echo "1 record added";
+mysqli_close($con);
+}
+?>
+<!DOCTYPE html>
+<html>
+<body>
+<pre>
+<h1> Enter Your Details</h1>
+                 <form action="/action_page.php">
+<form action="insert.php" method="POST">  
+Username:
+  <input type="text" name="username" required>
+      Age:
+     <br><input type="text"name="age"required><br>
+     DOB:
+     <br><input type="text"name="DOB"required><br>
+     Phonenumber:
+     <br><input type="text"name="phonenumber"required><br>
+     email
+     <br><input type="text"name="email"required><br>
+     Password:
+     <br> <input type="password" name="pw" pattern=".{6,}" title="Six or more characters"required><br> 
+     <input type="submit" name="sub" value="go"> 
+
+    
+     
+</form>
+</pre> </h2>
+
+</body>
+</html>
+
